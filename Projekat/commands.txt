@@ -1,0 +1,13 @@
+KOMANDE
+
+--------- REAL TIME ------------------
+
+./spark/bin/spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.1 --jars ./spark/apps/postgresql-42.5.1.jar ./spark/apps/averageWindSpeed.py
+
+./spark/bin/spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.1 --jars ./spark/apps/postgresql-42.5.1.jar ./spark/apps/biggestHumidity.py
+
+--------- BATCH ---------------
+
+docker exec -it spark-master bash
+
+./spark/bin/spark-submit --jars ./spark/apps/postgresql-42.5.1.jar ./spark/apps/transformation.py

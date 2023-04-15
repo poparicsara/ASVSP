@@ -1,0 +1,15 @@
+version: '3.0'
+
+services:
+  producer:
+    build: ./
+    container_name: kafka_producer_1
+    restart: on-failure
+    volumes:
+      - ../Data/Real-time processing:/usr/src/app/datasets/
+    networks:
+      - projectNetwork
+
+networks:
+  projectNetwork:
+    external: true
